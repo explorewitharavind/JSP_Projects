@@ -3,22 +3,22 @@ import java.util.Scanner;
 public class PalindromeOrNot {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter a Number");
-        String Number = sc.nextLine();
-        char[] MyChar = Number.toCharArray();
-        int Start = 0;
-        int end = MyChar.length-1;
-        if(Start==end)
+        int Number = sc.nextInt();
+        int Answer = Number;
+        int ReverseANumber = 0;
+        while(Number!=0)
         {
-            while(Start!=end)
-            {
-                Start++;
-                end--;
-            }
-            System.out.println("Not Palindrome");
+            int Last_Digit = Number%10;
+            ReverseANumber = ReverseANumber * 10 + Last_Digit;
+            Number = Number/10;
         }
-        else{
-            System.out.println(" Palindrome");
+        if(ReverseANumber == Answer)
+        {
+            System.out.println(Answer+" is a Palindrome Number");
+        }
+        else
+        {
+            System.out.println(Answer+" is Not a Palindrome Number");
         }
     }
 }
